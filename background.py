@@ -1,17 +1,17 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from funccusto import func_custo
+from costfunc import cost_func
 
 
-def bgimage():
-    step = 0.01
-    x = np.arange(0, 5, step)
-    y = np.arange(0, 5, step)
-    lenx = len(x)
-    z = np.zeros([lenx, lenx])
-    for countx in range(1, lenx):
-        for county in range(1, lenx):
-            z[countx][county] = -func_custo(x[countx], y[county])
+def create_bg_image(start, finish, step = 0.01):
+    x = np.arange(start, finish, step)
+    y = np.arange(start, finish, step)
+    len_x = len(x)
+    z = np.zeros([len_x, len_x])
+    for count_x in range(1, len_x):
+        for count_y in range(1, len_x):
+            z[count_x][count_y] = cost_func(y[count_y], x[count_x])
+
     plt.axis('off')
     plt.imshow(z, cmap='Spectral')
     plt.savefig('bg.png', bbox_inches='tight', pad_inches=0)
