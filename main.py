@@ -2,8 +2,6 @@ from pso_test import pso_run
 from background import create_bg_image
 import pygame
 
-light_blue = (68, 85, 90)
-
 class pygame_run():
     def __init__(self, start = 0, finish = 5, particles = 10, iterations = 30, inertia = 0.9, cognitive_c = 0.5, social_c = 1.5, max_vel = 0.25):
         self.n_pso_iterations = iterations
@@ -18,6 +16,7 @@ class pygame_run():
         create_bg_image(self.lower_bound, self.upper_bound)
 
         self.display_size = (369,369)
+        self.light_blue = (68, 85, 90)
         pygame.init()
         self.pygame_display = pygame.display.set_mode(self.display_size)
         pygame.display.set_caption('Particle Swarm')
@@ -32,12 +31,12 @@ class pygame_run():
                 for par in range(0, self.n_par):
                     x = self.adjust_to_display_pygame(self.x_frame_pos[par][frame])
                     y = self.adjust_to_display_pygame(self.y_frame_pos[par][frame])
-                    pygame.draw.circle(self.pygame_display, light_blue, (x, y), 5)
+                    pygame.draw.circle(self.pygame_display, self.light_blue, (x, y), 5)
             elif frame >= (self.n_pso_iterations - 1):
                 for par2 in range(0, self.n_par):
                     x = self.adjust_to_display_pygame(self.x_frame_pos[par2][self.n_pso_iterations - 1])
                     y = self.adjust_to_display_pygame(self.y_frame_pos[par2][self.n_pso_iterations - 1])
-                    pygame.draw.circle(self.pygame_display, light_blue, (x, y), 5)
+                    pygame.draw.circle(self.pygame_display, self.light_blue, (x, y), 5)
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
