@@ -2,7 +2,8 @@
 
 This repository contains a basic implementation of Particle Swarm Optimization (PSO) in Python. PSO is a computational method used for optimization problems, inspired by the social behavior of birds and fish.
 
-![Captura de tela 2025-02-05 224828](https://github.com/user-attachments/assets/ee422ea8-69ba-4d89-bf88-3a2ff520e35d)
+![image](https://github.com/user-attachments/assets/51d2ea38-993a-4a2e-88bc-15b9be072488)!
+
 
 ## Prerequisites
 Ensure you have Python instaled (>=3.6). You may need the following dependencies:
